@@ -15,7 +15,7 @@ const Tampilan = () => {
                 <Row gutter={16}>
                     <Col className="gutter-row" span={6}>
                         <div style={style}>
-                            <h3 style={{color:"white"}}>Arduino Store</h3>
+                            <p style={{ color: "white" }}><b>Arduino Store</b></p>
                         </div>
                     </Col>
                     <Col className="gutter-row" span={6}>
@@ -43,8 +43,7 @@ const Tampilan = () => {
                 </Breadcrumb>
                 <div className="site-layout-content">
                     <div className="Components">
-                        <Cards/>
-                        <Button>More Info</Button>
+                        <Cards />
                     </div>
                 </div>
             </Content>
