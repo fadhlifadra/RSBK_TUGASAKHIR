@@ -1,12 +1,22 @@
 import React from 'react';
-import { Layout, Breadcrumb } from 'antd';
+import { Layout, Breadcrumb, notification } from 'antd';
 import style from './style.css';
 import { Row, Col } from 'antd';
 import Link from './elements/Link';
-import Button from './elements/Button';
 import Cards from './components/Card';
 
 const { Header, Content, Footer } = Layout;
+
+//notifikasi
+const openNotification = () => {
+    const args = {
+      message: 'Panduan',
+      description:
+        'Silakan cek apakah data yang sudah muncul bisa terlihat semua. Jika belum ,cobalah untuk me-refresh laman ini dan jika masih belum bisa juga, hubungi Customer Kami.',
+      duration: 0,
+    };
+    notification.open(args);
+  };
 
 const Tampilan = () => {
     return (
@@ -26,8 +36,8 @@ const Tampilan = () => {
                     </Col>
                     <Col className="gutter-row" span={6}>
                         <div style={style}>
+                            <Link primary onClick={openNotification}>Panduan</Link>
                             <Link href="/SignIn">Sign In</Link>
-                            <Link href="/SignUp">Sign Up</Link>
                         </div>
                     </Col>
                 </Row>
@@ -43,7 +53,9 @@ const Tampilan = () => {
                 </Breadcrumb>
                 <div className="site-layout-content">
                     <div className="Components">
-                        <Cards />
+                        <div className="container">
+                            <Cards />
+                        </div>
                     </div>
                 </div>
             </Content>
