@@ -4,6 +4,7 @@ import style from './style.css';
 import { Row, Col } from 'antd';
 import Link from './elements/Link';
 import Cards from './components/Card';
+import Instagram from './components/Instagram';
 
 const { Header, Content, Footer } = Layout;
 
@@ -62,6 +63,9 @@ const Tampilan = () => {
             <Footer style={{ textAlign: 'center', fontFamily: 'Poppins', background:'#001529', color:'white'}}>
                 
             <h4 style={{color:"white"}}><b>Find Us On:</b></h4>
+            <br></br>
+            <Instagram/>
+            <hr></hr>
             <br></br>
                 Ant Design ©2018 Created by Ant UED
                 </Footer>

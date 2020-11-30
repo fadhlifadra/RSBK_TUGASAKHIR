@@ -34,9 +34,14 @@
   }
   
   .right {
+    margin-top: 20px;
     margin-left: 10px;
     width: 350px;
     text-align: left;
   }
 
-  
+  .Item-info{
+    background-color: white;
+    border-radius: 3px;
+    padding: 5px;
+  }
