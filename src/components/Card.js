@@ -1,17 +1,14 @@
-import { Tooltip, Modal, Divider, Space } from 'antd';
+import { Tooltip, Space } from 'antd';
 import axios from 'axios';
 import React, { Component } from 'react';
 import Button from '../elements/Button';
 import Kartu from '../elements/Kartu';
 import TextInput from '../elements/TextInput';
+import ViewMore from '../elements/ViewMore';
 import '../style.css';
 
 //export card
 export default class Card extends Component {
-    state = {
-        visible: false,
-    }
-
     constructor(props) {
         super(props);
         this.state = {
@@ -22,6 +19,7 @@ export default class Card extends Component {
             deskripsi: "",
             harga: "",
             search: "",
+            linkto: "",
         };
     }
     handleButton = () => {
@@ -58,6 +56,12 @@ export default class Card extends Component {
             search: e.target.value,
         });
         console.log(this.state.search);
+    }
+    handleLinkTo = (e) => {
+        this.setState({
+            linkto: e.target.value,
+        });
+        console.log(this.state.linkto);
     }
     componentDidMount() {
         axios({
@@ -111,33 +115,14 @@ export default class Card extends Component {
                                                                 <h2>{user.nama}</h2>
                                                                 <hr></hr>
                                                                 <h5>Rp {user.harga},00</h5>
-                                                                <Button onClick={this.handleButton}>View More</Button>
+                                                                <br></br>
+                                                                <ViewMore href={user.linkto}>View More</ViewMore>
                                                             </Space>
                                                         </div>
                                                     </div>
                                                 </Kartu>
                                             </Space>
                                         </div>
-                                        <Modal
-                                            title={user.handleNama}
-                                            centered
-                                            visible={this.state.visible}
-                                            onOk={() => this.setState({ visible: false })}
-                                            onCancel={() => this.setState({ visible: false })}
-                                            // okButtonProps
-                                            width={1000}
-                                        >
-                                            <h2>{user.nama}</h2>
-                                            <hr></hr>
-                                            <center>
-                                                <img alt="img" src={user.link} style={{ minHeight: '500px' }} />
-                                            </center>
-                                            <Divider orientation="left">
-                                                <h5>Deskripsi</h5></Divider>
-                                            <p style={{ textAlign: "justify" }}>{user.deskripsi}</p>
-                                            <br></br>
-                                            <h5 style={{ textAlign: "right" }}>Harga : {user.harga}</h5>
-                                        </Modal>
                                     </div>
                                 );
                             })}
