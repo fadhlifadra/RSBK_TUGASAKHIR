@@ -10,13 +10,13 @@ const { Header, Content, Footer } = Layout;
 //notifikasi
 const openNotification = () => {
     const args = {
-      message: 'Panduan',
-      description:
-        'Silakan cek apakah data yang sudah muncul bisa terlihat semua. Jika belum ,cobalah untuk me-refresh laman ini dan jika masih belum bisa juga, hubungi Customer Kami.',
-      duration: 0,
+        message: 'Panduan',
+        description:
+            'Silakan cek apakah data yang sudah muncul bisa terlihat semua. Jika belum ,cobalah untuk me-refresh laman ini dan jika masih belum bisa juga, hubungi Customer Kami.',
+        duration: 0,
     };
     notification.open(args);
-  };
+};
 
 const Tampilan = () => {
     return (
@@ -37,7 +37,7 @@ const Tampilan = () => {
                     <Col className="gutter-row" span={6}>
                         <div style={style}>
                             <Link primary onClick={openNotification}>Panduan</Link>
-                            <Link href="/SignIn">Sign In</Link>
+                            <Link href="/">Home</Link>
                         </div>
                     </Col>
                 </Row>
@@ -59,7 +59,12 @@ const Tampilan = () => {
                     </div>
                 </div>
             </Content>
-            <Footer style={{ textAlign: 'center', fontFamily: 'Poppins' }}>Ant Design ©2018 Created by Ant UED</Footer>
+            <Footer style={{ textAlign: 'center', fontFamily: 'Poppins', background:'#001529', color:'white'}}>
+                
+            <h4 style={{color:"white"}}><b>Find Us On:</b></h4>
+            <br></br>
+                Ant Design ©2018 Created by Ant UED
+                </Footer>
         </Layout>
     );
 };
