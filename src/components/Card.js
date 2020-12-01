@@ -1,4 +1,4 @@
-import { Tooltip, Space } from 'antd';
+import { Tooltip, Space, Collapse } from 'antd';
 import axios from 'axios';
 import React, { Component } from 'react';
 import Button from '../elements/Button';
@@ -6,6 +6,8 @@ import Kartu from '../elements/Kartu';
 import TextInput from '../elements/TextInput';
 import ViewMore from '../elements/ViewMore';
 import '../style.css';
+
+const { Panel } = Collapse;
 
 //export card
 export default class Card extends Component {
@@ -112,11 +114,16 @@ export default class Card extends Component {
 
                                                         <div className="column right">
                                                             <Space direction="vertical">
-                                                                <h2>{user.nama}</h2>
+                                                                <h3 style={{marginBottom:"5px"}}>{user.nama}</h3>
                                                                 <hr></hr>
+                                                                <Collapse ghost>
+                                                                    <Panel header="Deskripsi" key="1" style={{fontSize:"16px", fontWeight:"bold"}}>
+                                                                        <p style={{fontSize:"14px", textAlign:"justify", fontWeight:"normal"}}>{user.deskripsi}</p>
+                                                                    </Panel>
+                                                                </Collapse>
                                                                 <h5>Rp {user.harga},00</h5>
                                                                 <br></br>
-                                                                <ViewMore href={user.linkto}>View More</ViewMore>
+                                                                <ViewMore href={user.linkto}>View on Arduino.org</ViewMore>
                                                             </Space>
                                                         </div>
                                                     </div>
