@@ -13,7 +13,7 @@ const openNotification = () => {
     const args = {
         message: 'Panduan',
         description:
-            'Silakan cek apakah data yang sudah muncul bisa terlihat semua. Jika belum ,cobalah untuk me-refresh laman ini dan jika masih belum bisa juga, hubungi Customer Kami.',
+            'Silakan cek apakah data yang sudah muncul bisa terlihat semua. Jika belum, cobalah untuk me-refresh laman ini dan jika masih belum bisa juga, hubungi Customer Kami.',
         duration: 0,
     };
     notification.open(args);
